@@ -4,6 +4,7 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
@@ -15,6 +16,7 @@ build/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+
 
 ### Eclipse ###
 .apt_generated
@@ -28,6 +30,7 @@ bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -35,8 +38,11 @@ bin/
 /nbdist/
 /.nb-gradle/
 
+
 ### VS Code ###
 .vscode/
 
+
 ### Mac OS ###
 .DS_Store
+
