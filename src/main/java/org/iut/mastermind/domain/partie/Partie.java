@@ -46,13 +46,14 @@ public class Partie {
     // si toutes les lettres sont correctement placées,
     // on a terminé la partie
     public Reponse tourDeJeu(String motPropose) {
-        verifieNbEssais();
+
         if (!isTerminee()) {
             if (this.motADeviner.equals(motPropose)) {
                 this.partieTerminee = true;
             }
             this.nbEssais++;
         }
+        verifieNbEssais();
         return new Reponse(this.motADeviner);
     }
 

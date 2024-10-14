@@ -2,6 +2,7 @@ package org.iut.mastermind.domain.proposition;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import static java.util.Collections.unmodifiableList;
 
 public class Reponse {
@@ -15,7 +16,10 @@ public class Reponse {
 
     // on récupère la lettre à la position dans le résultat
     public Lettre lettre(int position) {
-        return resultat.get(position);
+        if(resultat.size() > position){
+            return resultat.get(position);
+        }
+        return Lettre.NON_PLACEE;
     }
 
     // on construit le résultat en analysant chaque lettre
@@ -42,10 +46,10 @@ public class Reponse {
 
     // renvoie le statut du caractère
     private Lettre evaluationCaractere(char carCourant) {
-        if (estPlace(carCourant)){
+        if (estPlace(carCourant)) {
             return Lettre.PLACEE;
         }
-        if(estPresent(carCourant)) {
+        if (estPresent(carCourant)) {
             return Lettre.NON_PLACEE;
         }
         return Lettre.INCORRECTE;
