@@ -26,7 +26,7 @@ public class Reponse {
     // du mot proposé
     public void compare(String essai) {
         for (position = 0; position < essai.length(); position++) {
-            resultat.add(evaluationCaractere(essai.charAt(position)));
+            resultat.add(evaluationCaractere(essai.charAt(position), position));
         }
     }
 
@@ -45,8 +45,8 @@ public class Reponse {
     }
 
     // renvoie le statut du caractère
-    private Lettre evaluationCaractere(char carCourant) {
-        if (estPlace(carCourant)) {
+    private Lettre evaluationCaractere(char carCourant, int position) {
+        if (estPlace(carCourant, position)) {
             return Lettre.PLACEE;
         }
         if (estPresent(carCourant)) {
@@ -61,7 +61,7 @@ public class Reponse {
     }
 
     // le caractère est placé dans le mot secret
-    private boolean estPlace(char carCourant) {
+    private boolean estPlace(char carCourant, int position) {
         return motSecret.charAt(position) == carCourant;
     }
 }
